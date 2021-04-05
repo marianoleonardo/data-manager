@@ -31,8 +31,6 @@ jobs:
         npm install -g dredd
         npm install
         npm run build
-        npm run start
-        npm run startTest
         npm run check-licenses
 
   integration-tests:
