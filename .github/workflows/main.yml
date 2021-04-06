@@ -32,6 +32,9 @@ jobs:
         npm install
         npm run build
         npm run check-licenses
+
+    - name: integration tests
+      run: |
         export FLOW_BROKER_URL=http://127.0.0.1:3030
         export DEVICE_MANAGER_URL=http://127.0.0.1:3030
         export CRON_URL=http://127.0.0.1:3030/cron
