@@ -8,7 +8,7 @@ on:
 
 jobs:
   npm-build:
-    name: npm Build
+    name: Npm Build and Test
     # If the commit message contains 'ci skip', it is not necessary to run this job
     if: contains(github.event.head_commit.message, 'ci skip') == false
     runs-on: ubuntu-18.04
@@ -36,22 +36,6 @@ jobs:
         export DEVICE_MANAGER_URL=http://127.0.0.1:3030
         export CRON_URL=http://127.0.0.1:3030/cron
         bash start-test.sh
-
-#   integration-tests:
-#     needs: npm-build
-#     name: Integration tests
-#     runs-on: ubuntu-18.04
-#     steps:
-
-#     - name: checkout
-#       uses: actions/checkout@v2
-
-#     - name: Build the stack and test
-#       run: |
-#         export FLOW_BROKER_URL=http://127.0.0.1:3030
-#         export DEVICE_MANAGER_URL=http://127.0.0.1:3030
-#         export CRON_URL=http://127.0.0.1:3030/cron
-#         bash start-test.sh
 
   docker-hub:
     needs: npm-build
