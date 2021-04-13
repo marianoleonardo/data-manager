@@ -11,7 +11,7 @@ const cron = require('./cron');
 const app = express();
 
 app.get('/device', (req, res) => {
-  res.json(device123);
+  res.json(device);
 });
 
 app.post('/device', (req, res) => {
